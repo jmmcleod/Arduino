@@ -1,20 +1,23 @@
 // example code for 3-stage mass driver
 
+//* Asterisk in comment are the changes that I made - JMM
+
 // define constants for pins
 
 const int coil1_pin = 2;
 const int coil2_pin = 3;
 const int coil3_pin = 4;
 
-const int sensor1_pin = 8;
-const int sensor2_pin = 9;
-const int sensor3_pin = 10;
+//Ignore sensors
+//*const int sensor1_pin = 8;
+//*const int sensor2_pin = 9;
+//*const int sensor3_pin = 10;
 
 // variables for sensor readings
-
-int sensor1;
-int sensor2;
-int sensor3;
+//*Ignore sensors
+//*int sensor1;
+//*int sensor2;
+//*int sensor3;
 
 // other variables
 
@@ -58,33 +61,36 @@ void loop() {
   }
   else{
     // read all 3 sensors
-    sensor1 = digitalRead(sensor1_pin);
-    sensor2 = digitalRead(sensor2_pin);
-    sensor3 = digitalRead(sensor3_pin);
+    //*Ignore sensors
+    //*sensor1 = digitalRead(sensor1_pin);
+    //*sensor2 = digitalRead(sensor2_pin);
+    //*sensor3 = digitalRead(sensor3_pin);
 
     // sensors are pulled high by default, go LOW when they detect magnetic field
 
     // when sensor 1 goes low, turn coil 1 off and turn coil 2 on
  
-    //put in delay of 100ms
-    //if(sensor1 == LOW){
+    //*put in delay of 100ms
+    //*if(sensor1 == LOW){
       delay(100);
       digitalWrite(coil1_pin, LOW);
       digitalWrite(coil2_pin, HIGH);
-    //}
+    //*}
 
     // when sensor 2 goes low, turn coil 2 off and turn coil 3 on
-    //if(sensor2 == LOW){
+    //*put in delay of 100ms
+    //*if(sensor2 == LOW){
       delay(100);
       digitalWrite(coil2_pin, LOW);
       digitalWrite(coil3_pin, HIGH);
-    //}
+    //*}
 
     // when sensor 3 goes low, turn coil 3 off 
-    //if(sensor3 == LOW){
+    //*put in delay of 100ms
+    //*if(sensor3 == LOW){
       delay(100);
       digitalWrite(coil3_pin, LOW);  
-    //}
+    //*}
   } 
 }
   
